@@ -1,6 +1,5 @@
 package com.bridgelabz.cab;
 
-
 public class Ride {
 
     public double distance;

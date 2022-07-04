@@ -1,4 +1,5 @@
 package com.bridgelabz.cab;
+
 public class InvoiceGenerator {
 
     private static final int MINIMUM_COST_PER_KILOMETER = 10;
@@ -20,5 +21,14 @@ public class InvoiceGenerator {
             totalFare += calculateFare(ride.distance, ride.time);
         }
         return totalFare;
+    }
+
+
+    public InvoiceSummary getInvoiceSummary(Ride[] rides) {
+        double totalFare = 0;
+        for (Ride ride : rides) {
+            totalFare += this.calculateFare(ride.distance, ride.time);
+        }
+        return new InvoiceSummary(rides.length, totalFare);
     }
 }
